@@ -11,7 +11,7 @@ import ErrorPage from "./pages/ErrorPage";
 
 const App = () => {
   const products = useSelector(state => state.data)
-  // console.log(products);
+  const setActiveClass = ({isActive})=> isActive ? 'tab__item tab__item-active' : 'tab__item'
   return (
     <>
       <div className="page-mobile">
@@ -38,10 +38,10 @@ const App = () => {
           <main className='content'>
               <div className="menu">
                 <ul className="tab">
-                  <li><NavLink to="/" className='tab__item tab__item-active'>All Coffee</NavLink></li>
-                  <li><NavLink to="/machiato" className='tab__item'>Machiato</NavLink></li>
-                  <li><NavLink to="/latte" className='tab__item'>Latte</NavLink></li>
-                  <li><NavLink to="/americano" className='tab__item'>Americano</NavLink></li>
+                  <li><NavLink to="/" className={setActiveClass}>All Coffee</NavLink></li>
+                  <li><NavLink to="/machiato" className={setActiveClass}>Machiato</NavLink></li>
+                  <li><NavLink to="/latte" className={setActiveClass}>Latte</NavLink></li>
+                  <li><NavLink to="/americano" className={setActiveClass}>Americano</NavLink></li>
                 </ul>
               </div>
 
